@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flappy Bird</title>
+    <title>Flappy Bird - Earn Money with Ads</title>
+    <!-- Adsterra Head Code -->
+    <script type="text/javascript">
+        atOptions = {
+            'key' : '4864807', // Adsterra থেকে প্রাপ্ত হেডার AD KEY
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="//www.highperformancedformats.com/4864807"></scr' + 'ipt>');
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -451,6 +462,11 @@
                 localStorage.setItem('flappyBirdHighScore', highScore);
                 highScoreElement.textContent = highScore;
             }
+
+            // Trigger Adsterra Popunder on Game Over
+            const adScript = document.createElement('script');
+            adScript.src = "//www.highperformancedformats.com/YOUR_POPUNDER_CODE";
+            document.body.appendChild(adScript);
         }
         
         // Start the game
@@ -486,6 +502,11 @@
             gameOverElement.style.display = 'none';
             jumpBtn.style.display = 'block';
             restartBtn.style.display = 'block';
+            
+            // Trigger Adsterra Popunder on Game Start
+            const adScript = document.createElement('script');
+            adScript.src = "//www.highperformancedformats.com/YOUR_POPUNDER_CODE";
+            document.body.appendChild(adScript);
             
             // Start game
             gameRunning = true;
